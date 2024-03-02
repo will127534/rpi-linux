@@ -94,7 +94,7 @@ jobs:
         make O=${{github.workspace}}/build INSTALL_MOD_PATH=${{github.workspace}}/install modules_install
         cp ${{github.workspace}}/build/Module.symvers ${{github.workspace}}/install/Module.symvers
     - name: Tar build
-      run: tar -cvf ${{matrix.name}}_build.tar -C ${{github.workspace}} .
+      run: tar -cvf ${{matrix.name}}_build.tar -C ${{github.workspace}}/install .
 
     - name: Upload results
       uses: actions/upload-artifact@v3
