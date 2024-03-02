@@ -97,7 +97,7 @@ jobs:
         cp ${{github.workspace}}/arch/${ARCH}/boot/dts/overlays/README ${{github.workspace}}/install/boot/overlays/
         cp ${{github.workspace}}/build/arch/${ARCH}/boot/$IMAGE ${{github.workspace}}/install/boot/${{matrix.kernel}}.img
     - name: Tar build
-      run: tar -cvf ${{matrix.name}}_build.tar -C ${{github.workspace}}/install .
+      run: tar -cvf ${{matrix.name}}_build.tar -C ${{github.workspace}} .
 
     - name: Upload results
       uses: actions/upload-artifact@v3
